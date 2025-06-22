@@ -35,3 +35,14 @@ for i in range(65,65+26):
     alphabet[i-64] = chr(i)
 
 print(alphabet)
+
+phrase= "awesome sauce"
+vowels = "euyoai"
+vowel_count = {}
+for vowel in vowels:
+    vowel_count[vowel] = 0
+for chr in phrase:
+    if chr in vowels:
+        vowel_count[chr] += 1
+
+print()
