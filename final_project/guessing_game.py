@@ -1,23 +1,21 @@
 import random
-num = random.randint (1,100)
-win = False
+def number_guessing_game():
+    random_number = random.randint(1,100)
+    max_attempts = 7
+    win = False
+    for attempt in range(1, max_attempts+1):
+        guess = int(input(f"Guess the number? (attempt {attempt}/7) :"))
+        if guess > random_number:
+            print("You are too high.")
+        elif guess < random_number:
+            print("You are too low")
+        else:
+            win = True
+            print("You won!")
+            break
 
-# for each attempt
-for attempt in range (1,8):
-    # catch the user's answer to the question
-    guess_str = input(f'Guess the number (attempt {attempt}/7): ')
-    # cast the guess into an int type
-    guess = int(guess_str)
-    if guess > num:
-        print("You are too high")
-    elif guess < num:
-        print("You are too low.")
-    else:
-        # if we enter here, the user won, let's finish the game
-        win = True
-        break
-# check if the user has won before the game is finished
-if win:
-    print("You won!")
-else:
-    print("You lost!")
+    if not win:
+        print("You lost!")
+        print(f"The correct number was : {random_number}")
+    return win
+result = number_guessing_game()
