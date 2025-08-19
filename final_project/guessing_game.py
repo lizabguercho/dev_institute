@@ -1,6 +1,6 @@
 import random
 def number_guessing_game():
-    random_number = random.randint(1,100)
+    random_number = random.randint(1,101)
     max_attempts = 7
     win = False
     for attempt in range(1, max_attempts+1):
